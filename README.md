@@ -1,5 +1,8 @@
-# Android-bitApp
+# ReignTestApp
 
 
-Test App for Reign
+Lets you see hackernews latest posts
 
+Required Android Studio 4.0 or above to compile a version.
+
+Can either download an test apk from releases folder.

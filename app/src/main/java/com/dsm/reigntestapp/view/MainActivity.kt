@@ -13,8 +13,13 @@ class MainActivity : AppCompatActivity() {
 
 
         supportFragmentManager.beginTransaction()
-            .setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_left)
-            .replace(R.id.container, ArticlesFragment::class.java, null)
+            .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right)
+            .add(R.id.container, PostsFragment::class.java, null)
             .commit()
+
+
+
+
+
     }
 }

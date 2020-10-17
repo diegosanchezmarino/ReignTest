@@ -2,6 +2,11 @@
     <string name="app_name">ReignTestApp</string>
 
 
+    <string name="error_fetching_data">Error fetching data</string>
+
+    <string name="error_post_not_found">Post not found</string>
+
+
 
 
     <string name="fake_new_title_1">How to automatically create images for Responsive design</string>
