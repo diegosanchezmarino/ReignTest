@@ -1,8 +1,8 @@
 package com.dsm.reigntestapp.di
 
 import com.dsm.reigntestapp.network.Apis
-import com.dsm.reigntestapp.network.deserializer.ArticlesDeserializer
-import com.dsm.reigntestapp.network.deserializer.ArticlesResponse
+import com.dsm.reigntestapp.network.deserializer.PostsDeserializer
+import com.dsm.reigntestapp.network.deserializer.PostsResponse
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -22,10 +22,10 @@ val retrofitModule = module {
 fun provideHttpClient(): OkHttpClient {
 
     return OkHttpClient.Builder()
-        .readTimeout(10L, SECONDS)
-        .connectTimeout(10L, SECONDS)
-        .callTimeout(10L, SECONDS)
-        .writeTimeout(10L, SECONDS)
+        .readTimeout(15L, SECONDS)
+        .connectTimeout(15L, SECONDS)
+        .callTimeout(15L, SECONDS)
+        .writeTimeout(15L, SECONDS)
         .addNetworkInterceptor(StethoInterceptor())
         .build()
 }
@@ -33,7 +33,7 @@ fun provideHttpClient(): OkHttpClient {
 fun provideGson(): GsonConverterFactory {
 
     var gsonBuilder = GsonBuilder().also {
-        it.registerTypeHierarchyAdapter(ArticlesResponse::class.java, ArticlesDeserializer())
+        it.registerTypeHierarchyAdapter(PostsResponse::class.java, PostsDeserializer())
     }
 
     return GsonConverterFactory.create(gsonBuilder.create())
